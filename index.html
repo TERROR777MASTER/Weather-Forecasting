@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101a35" />
+  <title>SkyCast — 7 Day Weather Forecast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SkyCast home">
+        <span class="brand-icon">☀</span>
+        <span>sky<span class="brand-light">cast</span></span>
+      </a>
+      <div class="top-note"><span class="live-dot"></span> LIVE WEATHER</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR WEATHER, AT A GLANCE</p>
+          <h1>Forecasts for<br><span>every kind of day.</span></h1>
+          <p class="intro">A clearer view of today and the week ahead.</p>
+        </div>
+        <form id="search-form" class="search-bar">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="city-input" type="search" placeholder="Search a city (e.g. Shimla)" value="Shimla" aria-label="City name" autocomplete="off" />
+          <button type="submit" id="search-button">Search <span>→</span></button>
+        </form>
+        <p class="search-hint">Try any city or town around the world</p>
+      </section>
+
+      <p id="status" class="status" role="status">Loading weather…</p>
+
+      <section id="weather-content" class="weather-content" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">CURRENT CONDITIONS</p>
+            <h2 id="location-name">Shimla, India</h2>
+            <p id="current-date" class="muted">Today</p>
+          </div>
+          <div class="updated"><span class="live-dot"></span> Current weather</div>
+        </div>
+
+        <section class="current-card">
+          <div class="current-main">
+            <div class="current-place">
+              <span class="pin">⌖</span>
+              <span id="location-detail">Himachal Pradesh, India</span>
+            </div>
+            <div class="temperature-row">
+              <span id="current-icon" class="weather-emoji" aria-hidden="true">🌤️</span>
+              <div class="temperature" id="current-temperature">--°</div>
+            </div>
+            <div id="current-description" class="condition">Getting conditions…</div>
+            <div class="feels-like">Feels like <strong id="feels-like">--°C</strong></div>
+          </div>
+          <div class="current-divider"></div>
+          <div class="current-stats">
+            <div class="stat">
+              <span class="stat-icon">💧</span>
+              <div><span class="stat-label">Humidity</span><strong id="humidity">--%</strong></div>
+            </div>
+            <div class="stat">
+              <span class="stat-icon">💨</span>
+              <div><span class="stat-label">Wind speed</span><strong id="wind-speed">-- km/h</strong></div>
+            </div>
+            <div class="stat">
+              <span class="stat-icon">☀️</span>
+              <div><span class="stat-label">UV index</span><strong id="uv-index">--</strong></div>
+            </div>
+            <div class="stat">
+              <span class="stat-icon">🌧️</span>
+              <div><span class="stat-label">Rain chance</span><strong id="rain-chance">--%</strong></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="forecast-section">
+          <div class="section-heading forecast-heading">
+            <div>
+              <p class="eyebrow">PLAN YOUR WEEK</p>
+              <h2>7-day forecast</h2>
+            </div>
+            <div class="unit-note">Temperature <span>°C</span></div>
+          </div>
+          <div id="forecast-grid" class="forecast-grid"></div>
+        </section>
+
+        <footer class="footer">
+          <span>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></span>
+        </footer>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
